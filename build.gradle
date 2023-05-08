@@ -18,6 +18,9 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    //In this way the connection with the DB will be uniquely when we are operating.
+    runtimeOnly 'org.postgresql:postgresql'
 }
 
 tasks.named('test') {
