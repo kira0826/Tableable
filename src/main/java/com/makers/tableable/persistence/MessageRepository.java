@@ -3,10 +3,9 @@ package com.makers.tableable.persistence;
 import com.makers.tableable.domain.MessageDTO;
 import com.makers.tableable.domain.repository.MessageDomainRepository;
 import com.makers.tableable.persistence.crud.MessageCrud;
-import com.makers.tableable.persistence.entity.Line;
-import com.makers.tableable.persistence.entity.LineMessagePK;
 import com.makers.tableable.persistence.entity.Message;
 import com.makers.tableable.persistence.mapper.MessageMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,6 +17,13 @@ public class MessageRepository implements MessageDomainRepository {
 
     private MessageCrud messageCrud;
     private MessageMapper mapper;
+
+    @Autowired
+    public MessageRepository(MessageCrud messageCrud, MessageMapper mapper) {
+        this.messageCrud = messageCrud;
+        this.mapper = mapper;
+    }
+
     public List<MessageDTO> findAll(){
 
         return mapper.toMessageDomainList( (List<Message>) messageCrud.findAll());

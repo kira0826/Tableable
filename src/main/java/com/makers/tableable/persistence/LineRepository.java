@@ -6,6 +6,7 @@ import com.makers.tableable.persistence.crud.LineCrud;
 import com.makers.tableable.persistence.entity.Line;
 import com.makers.tableable.persistence.entity.LineMessagePK;
 import com.makers.tableable.persistence.mapper.LineMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.swing.text.html.Option;
@@ -19,6 +20,11 @@ public class LineRepository implements LineDomainRepository {
     private LineCrud lineCrud;
     private LineMapper mapper;
 
+    @Autowired
+    public LineRepository(LineCrud lineCrud, LineMapper mapper) {
+        this.lineCrud = lineCrud;
+        this.mapper = mapper;
+    }
 
     public List<LineDTO> getAll(){
 
