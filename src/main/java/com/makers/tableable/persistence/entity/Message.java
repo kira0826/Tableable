@@ -2,6 +2,7 @@ package com.makers.tableable.persistence.entity;
 
 import jakarta.persistence.*;
 
+import javax.swing.*;
 import java.util.List;
 
 @Entity
@@ -13,26 +14,26 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Used to generate the id in an automatic way.
     @Column(name = "id")
 
-    private int messageID;
+    private Integer messageID;
 
-    private int satisfaction;
+    private Integer satisfaction;
 
     @OneToMany(mappedBy = "message")
     private List<Line> lines;
 
-    public int getSatisfaction() {
+    public Integer getSatisfaction() {
         return satisfaction;
     }
 
-    public void setSatisfaction(int satisfaction) {
+    public void setSatisfaction(Integer satisfaction) {
         this.satisfaction = satisfaction;
     }
 
-    public void setMessageID(int messageID) {
+    public void setMessageID(Integer messageID) {
         this.messageID = messageID;
     }
 
-    public int getMessageID() {
+    public Integer getMessageID() {
         return messageID;
     }
 }

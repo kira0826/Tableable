@@ -19,6 +19,9 @@ public class Line {
     @JoinColumn(name = "lineID.getMessageID()", insertable = false, updatable = false)
     private Message message;
 
+    @Column(name = "confidence")
+    private Double confidence;
+
 
     public LineMessagePK getLineID() {
         return lineID;
@@ -42,5 +45,21 @@ public class Line {
 
     public void setBoxingPosition(Integer[] boxingPosition) {
         this.boxingPosition = boxingPosition;
+    }
+
+    public Message getMessage() {
+        return message;
+    }
+
+    public void setMessage(Message message) {
+        this.message = message;
+    }
+
+    public Double getConfidence() {
+        return confidence;
+    }
+
+    public void setConfidence(Double confidence) {
+        this.confidence = confidence;
     }
 }
