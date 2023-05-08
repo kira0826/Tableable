@@ -2,10 +2,13 @@ package com.makers.tableable.persistence;
 
 import com.makers.tableable.persistence.crud.LineCrud;
 import com.makers.tableable.persistence.entity.Line;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+
+@Repository // Semantic purposes to identify which java class is interacting with  the DB.
 public class LineRepository {
 
     private LineCrud lineCrud;
