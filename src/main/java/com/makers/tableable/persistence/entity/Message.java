@@ -2,6 +2,8 @@ package com.makers.tableable.persistence.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "messages")
 public class Message {
@@ -14,6 +16,9 @@ public class Message {
     private int messageID;
 
     private int satisfaction;
+
+    @OneToMany(mappedBy = "message")
+    private List<Line> lines;
 
     public int getSatisfaction() {
         return satisfaction;
