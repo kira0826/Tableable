@@ -2,6 +2,7 @@ package com.makers.tableable.persistence;
 
 import com.makers.tableable.persistence.crud.LineCrud;
 import com.makers.tableable.persistence.entity.Line;
+import com.makers.tableable.persistence.entity.LineMessagePK;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -22,5 +23,12 @@ public class LineRepository {
     }
     public Optional<List<Line>> notReliableLines(){
         return lineCrud.findByConfidenceLessThanOrderByConfidenceAsc(0.5);
+    }
+    public Line save(Line line){
+        return lineCrud.save(line);
+    }
+
+    public void delete (LineMessagePK key){
+        lineCrud.deleteById(key);
     }
 }

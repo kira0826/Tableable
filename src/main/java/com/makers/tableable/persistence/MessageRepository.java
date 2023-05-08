@@ -1,6 +1,8 @@
 package com.makers.tableable.persistence;
 
 import com.makers.tableable.persistence.crud.MessageCrud;
+import com.makers.tableable.persistence.entity.Line;
+import com.makers.tableable.persistence.entity.LineMessagePK;
 import com.makers.tableable.persistence.entity.Message;
 import org.springframework.stereotype.Repository;
 
@@ -22,6 +24,13 @@ public class MessageRepository {
     }
     Optional<List<Message>> messagesWithBadSatisfaction(){
         return messageCrud.findBySatisfactionLessThanOrderBySatisfactionAsc(4);
+    }
+    public Message save(Message message){
+        return messageCrud.save(message);
+    }
+
+    public void delete (int key){
+        messageCrud.deleteById(key);
     }
 
 
