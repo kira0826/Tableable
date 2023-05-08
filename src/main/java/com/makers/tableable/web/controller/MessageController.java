@@ -33,13 +33,12 @@ public class MessageController {
     public Optional<List<MessageDTO>> getBadMessages(){
         return messageDTOService.messagesWithBadSatisfaction();
     }
-    @PostMapping("/saveMessage")
+    @PostMapping("/save")
     public MessageDTO save(MessageDTO message){
         return messageDTOService.save(message);
     }
-    @DeleteMapping("/deleteMessage")
+    @DeleteMapping("/delete")
     public void delete(int key){
         messageDTOService.delete(key);
     }
-
 }
