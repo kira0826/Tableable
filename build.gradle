@@ -17,6 +17,9 @@ dependencies {
     implementation 'org.apache.httpcomponents:httpclient:4.5.14'
     implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.mapstruct:mapstruct:1.5.5.Final:'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     //In this way the connection with the DB will be uniquely when we are operating.
