@@ -4,6 +4,8 @@ import com.makers.tableable.domain.MessageDTO;
 import com.makers.tableable.persistence.entity.Message;
 import org.mapstruct.*;
 
+import java.util.List;
+
 // ComponentModel is used to define a connection with Spring.
 @Mapper(componentModel = "spring",  uses = {LineMapper.class})
 public interface MessageMapper {
@@ -15,6 +17,7 @@ public interface MessageMapper {
             @Mapping(source = "lines", target = "lines")
     })
     MessageDTO toMessageDomain(Message message);
+    List<MessageDTO> toMessageDomainList(List<Message> messageList);
 
     @InheritInverseConfiguration
     Message toMessage(MessageDTO messageDTO);
