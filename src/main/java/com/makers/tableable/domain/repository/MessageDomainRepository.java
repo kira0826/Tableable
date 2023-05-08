@@ -1,20 +1,19 @@
 package com.makers.tableable.domain.repository;
 
-import com.makers.tableable.domain.MessageDomain;
-import com.makers.tableable.persistence.entity.Message;
+import com.makers.tableable.domain.MessageDTO;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface MessageDomainRepository {
 
-    List<MessageDomain> findAll();
+    List<MessageDTO> findAll();
 
-    Optional<List<MessageDomain>> messagesWithGreatSatisfaction();
+    Optional<List<MessageDTO>> messagesWithGreatSatisfaction();
 
-    Optional<List<MessageDomain>> messagesWithBadSatisfaction();
+    Optional<List<MessageDTO>> messagesWithBadSatisfaction();
 
-    MessageDomain save(MessageDomain message);
+    MessageDTO save(MessageDTO message);
 
     void delete (int key);
 }

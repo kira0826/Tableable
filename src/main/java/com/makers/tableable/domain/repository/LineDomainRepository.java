@@ -1,19 +1,19 @@
 package com.makers.tableable.domain.repository;
 
-import com.makers.tableable.domain.LineDomain;
+import com.makers.tableable.domain.LineDTO;
 import com.makers.tableable.persistence.entity.LineMessagePK;
 import java.util.*;
 
 
 public interface LineDomainRepository {
 
-    List<LineDomain> getAll();
+    List<LineDTO> getAll();
 
-    Optional<List<LineDomain>> reliableLines();
+    Optional<List<LineDTO>> reliableLines();
 
-    Optional<List<LineDomain>> notReliableLines();
+    Optional<List<LineDTO>> notReliableLines();
 
-    LineDomain save(LineDomain line);
+    LineDTO save(LineDTO line);
 
     void delete (LineMessagePK key);
 

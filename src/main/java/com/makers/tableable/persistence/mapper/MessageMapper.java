@@ -1,6 +1,6 @@
 package com.makers.tableable.persistence.mapper;
 
-import com.makers.tableable.domain.MessageDomain;
+import com.makers.tableable.domain.MessageDTO;
 import com.makers.tableable.persistence.entity.Message;
 import org.mapstruct.*;
 
@@ -14,8 +14,8 @@ public interface MessageMapper {
             @Mapping(source = "satisfaction", target = "satisfaction"),
             @Mapping(source = "lines", target = "lines")
     })
-    MessageDomain toMessageDomain(Message message);
+    MessageDTO toMessageDomain(Message message);
 
     @InheritInverseConfiguration
-    Message toMessage(MessageDomain messageDomain);
+    Message toMessage(MessageDTO messageDTO);
 }

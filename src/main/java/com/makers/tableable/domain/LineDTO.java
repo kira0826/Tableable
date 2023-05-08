@@ -2,7 +2,7 @@ package com.makers.tableable.domain;
 
 import com.makers.tableable.persistence.entity.Message;
 
-public class LineDomain {
+public class LineDTO {
 
     private Integer[]  boxingPosition;
 

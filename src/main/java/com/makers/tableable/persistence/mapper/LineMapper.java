@@ -1,6 +1,6 @@
 package com.makers.tableable.persistence.mapper;
 
-import com.makers.tableable.domain.LineDomain;
+import com.makers.tableable.domain.LineDTO;
 import com.makers.tableable.persistence.entity.Line;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -17,9 +17,9 @@ public interface LineMapper {
                 @Mapping(source = "confidence", target = "confidence"),
                 @Mapping(source = "message", target = "message"),
         })
-        LineDomain toLineDomain(Line line);
+        LineDTO toLineDomain(Line line);
 
         @InheritInverseConfiguration
         @Mapping(target = "lineID", ignore = true)
-        Line toMessage(LineDomain lineDomain);
+        Line toMessage(LineDTO lineDTO);
 }

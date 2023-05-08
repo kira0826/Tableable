@@ -4,7 +4,7 @@ import com.makers.tableable.persistence.entity.Line;
 
 import java.util.List;
 
-public class MessageDomain {
+public class MessageDTO {
 
     private Integer messageID;
 
