@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface LineCrud extends CrudRepository<Line, LineMessagePK> {
+public interface LineCrud extends CrudRepository<Line, Integer> {
 
     //We are using optional in order to manage possible nulls responses.
 

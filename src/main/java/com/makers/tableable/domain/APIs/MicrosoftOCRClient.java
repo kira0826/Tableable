@@ -12,13 +12,13 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.net.URI;
 
-@Component
+@Service
 public class MicrosoftOCRClient {
 
     static final String  ENDPOINT = "https://mathematicalexpressionrecognizer.cognitiveservices.azure.com/vision/v3.2/read/analyze";
@@ -87,8 +87,8 @@ public class MicrosoftOCRClient {
             if (response.getStatusLine().getStatusCode() == 200){
                 ObjectMapper objectMapper = new ObjectMapper();
                 JsonNode rootNode = objectMapper.readTree(EntityUtils.toString(entity));
-                JsonNode linesNode = rootNode.get("analyzeResult").get("readResults").get(0).get("lines");
-                messageJson = linesNode;
+
+                messageJson = rootNode;
             }
         }catch (Exception e){
             System.out.println(e.getMessage());

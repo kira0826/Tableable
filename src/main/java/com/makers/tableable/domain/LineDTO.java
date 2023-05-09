@@ -1,6 +1,5 @@
 package com.makers.tableable.domain;
 
-import com.makers.tableable.persistence.entity.LineMessagePK;
 import com.makers.tableable.persistence.entity.Message;
 
 public class LineDTO {
@@ -13,7 +12,11 @@ public class LineDTO {
 
     private Message message;
 
-    private LineMessagePK lineID;
+    private Integer lineID;
+    private Integer messageID;
+
+    public LineDTO() {
+    }
 
     public Integer[] getBoxingPosition() {
         return boxingPosition;
@@ -47,11 +50,19 @@ public class LineDTO {
         this.message = message;
     }
 
-    public LineMessagePK getLineID() {
+    public Integer getLineID() {
         return lineID;
     }
 
-    public void setLineID(LineMessagePK lineID) {
+    public void setLineID(Integer lineID) {
         this.lineID = lineID;
+    }
+
+    public Integer getMessageID() {
+        return messageID;
+    }
+
+    public void setMessageID(Integer messageID) {
+        this.messageID = messageID;
     }
 }

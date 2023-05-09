@@ -4,12 +4,10 @@ import com.makers.tableable.domain.LineDTO;
 import com.makers.tableable.domain.repository.LineDomainRepository;
 import com.makers.tableable.persistence.crud.LineCrud;
 import com.makers.tableable.persistence.entity.Line;
-import com.makers.tableable.persistence.entity.LineMessagePK;
 import com.makers.tableable.persistence.mapper.LineMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,7 +43,7 @@ public class LineRepository implements LineDomainRepository {
         Line line1 = mapper.toLineRepository(line);
         return mapper.toLineDomain(lineCrud.save(line1));
     }
-    public void delete (LineMessagePK key){
+    public void delete (Integer key){
         lineCrud.deleteById(key);
     }
 }

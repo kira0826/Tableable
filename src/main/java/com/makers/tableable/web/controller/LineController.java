@@ -2,11 +2,9 @@ package com.makers.tableable.web.controller;
 
 import com.makers.tableable.domain.LineDTO;
 import com.makers.tableable.domain.service.LineDTOService;
-import com.makers.tableable.persistence.entity.LineMessagePK;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.management.DescriptorKey;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,7 +38,7 @@ public class LineController {
         return lineDTOService.save(line);
     }
     @DeleteMapping("/delete")
-    public void delete(LineMessagePK key){
+    public void delete(Integer key){
         lineDTOService.delete(key);
     }
 

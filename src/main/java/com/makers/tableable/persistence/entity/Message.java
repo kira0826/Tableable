@@ -1,21 +1,19 @@
 package com.makers.tableable.persistence.entity;
 
 import jakarta.persistence.*;
-
-import javax.swing.*;
 import java.util.List;
 
 @Entity
 @Table(name = "messages")
 public class Message {
 
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Used to generate the id in an automatic way.
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Used to generate the id in an automatic way.
 
     private Integer messageID;
 
+    @Column(name = "satisfaction")
     private Integer satisfaction;
 
     @OneToMany(mappedBy = "message")
@@ -36,11 +34,9 @@ public class Message {
     public Integer getMessageID() {
         return messageID;
     }
-
     public List<Line> getLines() {
         return lines;
     }
-
     public void setLines(List<Line> lines) {
         this.lines = lines;
     }

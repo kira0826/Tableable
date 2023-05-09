@@ -1,34 +1,48 @@
 package com.makers.tableable.persistence.entity;
 
 import jakarta.persistence.*;
-import org.springframework.context.MessageSource;
+
 
 @Entity
 @Table(name = "lines")
 public class Line {
 
-    @EmbeddedId
-    private LineMessagePK lineID;
+    @Id
+    @Column(name = "id")
+    private Integer lineID;
 
+    @Column(name = "messageID")
+    private Integer messageID;
     private String text;
 
-    @Column(name = "boxingPosition", columnDefinition = "integer[]")
-    private Integer[]  boxingPosition;
 
+
+    @Column(name = "boxingPosition", columnDefinition = "integer[]")
+    @Convert(converter = IntegerArrayConverter.class)
+    private Integer[]  boxingPosition;
     @ManyToOne
-    @JoinColumn(name = "lineID.getMessageID()", insertable = false, updatable = false)
+    @JoinColumn(name = "messageID", insertable = false, updatable = false)
     private Message message;
 
     @Column(name = "confidence")
     private Double confidence;
 
 
-    public LineMessagePK getLineID() {
+
+    public Integer getLineID() {
         return lineID;
     }
 
-    public void setLineID(LineMessagePK lineID) {
+    public void setLineID(Integer lineID) {
         this.lineID = lineID;
+    }
+
+    public Integer getMessageID() {
+        return messageID;
+    }
+
+    public void setMessageID(Integer messageID) {
+        this.messageID = messageID;
     }
 
     public String getText() {
@@ -46,17 +60,15 @@ public class Line {
     public void setBoxingPosition(Integer[] boxingPosition) {
         this.boxingPosition = boxingPosition;
     }
-
+    public Double getConfidence() {
+        return confidence;
+    }
     public Message getMessage() {
         return message;
     }
 
     public void setMessage(Message message) {
         this.message = message;
-    }
-
-    public Double getConfidence() {
-        return confidence;
     }
 
     public void setConfidence(Double confidence) {

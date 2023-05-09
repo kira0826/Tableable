@@ -18,7 +18,8 @@ public interface LineMapper {
                 @Mapping(source = "text", target = "text"),
                 @Mapping(source = "confidence", target = "confidence"),
                 @Mapping(source = "message", target = "message"),
-                @Mapping(source = "lineID", target = "lineID")
+                @Mapping(source = "lineID", target = "lineID"),
+                @Mapping(source = "messageID", target = "messageID")
 
         })
         LineDTO toLineDomain(Line line);

@@ -2,7 +2,6 @@ package com.makers.tableable.domain.service;
 
 import com.makers.tableable.domain.LineDTO;
 import com.makers.tableable.domain.repository.LineDomainRepository;
-import com.makers.tableable.persistence.entity.LineMessagePK;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +30,7 @@ public class LineDTOService {
     public LineDTO save(LineDTO line){
         return lineDomainRepository.save(line);
     }
-    public void delete(LineMessagePK key){
+    public void delete(Integer key){
         lineDomainRepository.delete(key);
     }
 

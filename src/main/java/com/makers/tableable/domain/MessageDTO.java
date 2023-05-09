@@ -10,7 +10,10 @@ public class MessageDTO {
 
     private Integer satisfaction;
 
-    private List<Line> lines;
+    private List<LineDTO> lines;
+
+    public MessageDTO() {
+    }
 
     public Integer getMessageID() {
         return messageID;
@@ -28,11 +31,11 @@ public class MessageDTO {
         this.satisfaction = satisfaction;
     }
 
-    public List<Line> getLines() {
+    public List<LineDTO> getLines() {
         return lines;
     }
 
-    public void setLines(List<Line> lines) {
+    public void setLines(List<LineDTO> lines) {
         this.lines = lines;
     }
 }

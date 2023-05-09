@@ -1,7 +1,7 @@
 package com.makers.tableable.domain.repository;
 
 import com.makers.tableable.domain.LineDTO;
-import com.makers.tableable.persistence.entity.LineMessagePK;
+
 import java.util.*;
 
 
@@ -15,6 +15,6 @@ public interface LineDomainRepository {
 
     LineDTO save(LineDTO line);
 
-    void delete (LineMessagePK key);
+    void delete (Integer key);
 
 }

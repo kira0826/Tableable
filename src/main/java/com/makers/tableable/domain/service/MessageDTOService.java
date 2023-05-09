@@ -18,6 +18,7 @@ public class MessageDTOService {
         this.messageDomainRepository = messageDomainRepository;
     }
 
+
     public List<MessageDTO> getAll(){
         return messageDomainRepository.findAll();
     }
